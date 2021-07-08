@@ -1,0 +1,39 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "practice website-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "start:prod": "webpack serve --mode development --open",
+    "watch": "webpack --mode development --watch",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LOiif/toxin_practic.git"
+  },
+  "keywords": [
+    "js",
+    "website",
+    "practice"
+  ],
+  "author": "LOiif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LOiif/toxin_practic/issues"
+  },
+  "homepage": "https://github.com/LOiif/toxin_practic#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
