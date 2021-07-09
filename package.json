@@ -10,10 +10,6 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LOiif/toxin_practic.git"
-  },
   "keywords": [
     "js",
     "website",
