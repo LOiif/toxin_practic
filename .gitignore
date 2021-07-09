@@ -6,6 +6,7 @@ DS_Store
 *.psd
 *.sublime*
 node_modules/
+dist/
 npm-debug.*
 source/css/*.css
 source/css/*.map
