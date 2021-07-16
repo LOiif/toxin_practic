@@ -1,0 +1,12 @@
+//colors:
+$blue: #8BA4F9;
+$light-blue: #66D2EA;
+$purple: #BC9CFF;
+$green: #6FCF97;
+
+$dark-shade: #1f2041;
+$dark-shade-75: transparentize($dark-shade, 0.25);
+$dark-shade-50: transparentize($dark-shade, 0.5);
+$dark-shade-25: transparentize($dark-shade, 0.75);
+$dark-shade-5: transparentize($dark-shade, 0.95);
+
