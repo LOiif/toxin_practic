@@ -21,7 +21,42 @@ module.exports = {
         rules: [
             {
                 test: /\.(sc|c)ss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader",
+                    {
+                        loader: 'resolve-url-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                        }
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name]-[hash:8].[ext]',
+                        }
+                    },
+                ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'fonts/[name]-[hash:8].[ext]',
+                        },
+                    },
+                ],
             },
         ],
     },
