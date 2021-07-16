@@ -1,0 +1,31 @@
+@mixin purple-gradient() {
+  background-color: $purple;
+  background-image: -webkit-gradient(linear, bottom, from($blue), to($purple));
+  background-image: -webkit-linear-gradient(bottom, $blue, $purple);
+  background-image: -moz-linear-gradient(bottom, $blue, $purple);
+  background-image: -ms-linear-gradient(bottom, $blue, $purple);
+  background-image: -o-linear-gradient(bottom, $blue, $purple);
+  background-image: linear-gradient(bottom, $blue, $purple);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$blue}', EndColorStr='#{$purple}');
+}
+@mixin green-gradient() {
+  background-color: $green;
+  background-image: -webkit-gradient(linear, bottom, from($light-blue), to($green));
+  background-image: -webkit-linear-gradient(bottom, $light-blue, $green);
+  background-image: -moz-linear-gradient(bottom, $light-blue, $green);
+  background-image: -ms-linear-gradient(bottom, $light-blue, $green);
+  background-image: -o-linear-gradient(bottom, $light-blue, $green);
+  background-image: linear-gradient(bottom, $light-blue, $green);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$light-blue}', EndColorStr='#{$green}');
+}
+
+@mixin linear-gradient($direction, $fromColor, $toColor) {
+  background-color: $toColor;
+  background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor));
+  background-image: -webkit-linear-gradient($direction, $fromColor, $toColor);
+  background-image: -moz-linear-gradient($direction, $fromColor, $toColor);
+  background-image: -ms-linear-gradient($direction, $fromColor, $toColor);
+  background-image: -o-linear-gradient($direction, $fromColor, $toColor);
+  background-image: linear-gradient($direction, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
