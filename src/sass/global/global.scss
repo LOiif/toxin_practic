@@ -1,17 +1,26 @@
-*, *:before, *:after{
+*, *:before, *:after {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+.page {
+  color: $dark-shade-75;
+  font-family: $font-montserrat;
+  font-size: $text-size-m;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
-  list-style-image: none;
+  list-style: none;
+  padding-left: 0;
 }
 
 .visually-hidden {
