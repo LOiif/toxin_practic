@@ -1,0 +1,35 @@
+.button{
+  text-transform: uppercase;
+  font-size: $title-size-s;
+  font-weight: 700;
+}
+
+.button_rounded {
+  border: 2px solid transparent;
+  padding: 8px 20px 8px;
+  border-radius: 22px;
+  position: relative;
+
+  background-clip: padding-box;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    @include purple-gradient;
+  }
+  &:active:before{
+    opacity: 0.5;
+  }
+}
+
+.button_filled{
+  background-color: transparent;
+  color: white;
+}
+.button_transparent{
+  background-color: white;
+  color: $purple;
+}
