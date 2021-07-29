@@ -1,0 +1,130 @@
+.dropdown {
+  position: relative;
+  caret-color: transparent;
+}
+
+.dropdown__label {
+  font-weight: 700;
+  font-size: $title-size-s;
+  color: $dark-shade;
+  text-transform: uppercase;
+
+  padding-bottom: 10px;
+
+  @include bottom-arrow-input();
+}
+
+.dropdown__input {
+  position: relative;
+  color: $dark-shade-75;
+  padding-left: 17px;
+  padding-right: 44px;
+
+  &:disabled {
+    background-color: white;
+    cursor: text;
+  }
+
+  &:focus {
+    caret-color: transparent;
+    outline: none;
+  }
+
+}
+
+.dropdown__content {
+  position: absolute;
+
+  top: 69px;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  background-color: white;
+
+  padding-bottom: 13px;
+  padding-left: 13px;
+  padding-top: 7px;
+  padding-right: 7px;
+}
+
+.dropdown__list {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.dropdown__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: $dark-shade;
+  font-size: $title-size-s;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dropdown__item-button {
+  width: 30px;
+  height: 30px;
+
+  position: relative;
+
+  color: $dark-shade-50;
+
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  background-color: white;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  &_minus {
+    position: absolute;
+
+    top: 4px;
+    right: 64px;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.38;
+  }
+}
+
+.dropdown__item-counter {
+  padding: 0 10px;
+}
+
+.dropdown__footer-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 17px;
+}
+
+.dropdown__footer-button {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: $title-size-s;
+  color: $purple;
+
+  border: none;
+  background-color: white;
+
+  cursor: pointer;
+
+  &_close {
+    margin-left: auto;
+  }
+
+  &_clear {
+    margin-right: auto;
+  }
+}
