@@ -5,12 +5,46 @@
   background-image: -moz-linear-gradient($direction, $fromColor, $toColor);
   background-image: -ms-linear-gradient($direction, $fromColor, $toColor);
   background-image: -o-linear-gradient($direction, $fromColor, $toColor);
-  background-image: linear-gradient($direction, $fromColor, $toColor);
+  background-image: linear-gradient(to $direction, $fromColor, $toColor);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
+
 @mixin purple-gradient {
-  @include linear-gradient(bottom, $blue, $purple);
+  @include linear-gradient(top, $blue, $purple);
 }
+
 @mixin green-gradient {
-  @include linear-gradient(bottom, $light-blue, $green);
+  @include linear-gradient(top, $light-blue, $green);
+}
+
+@mixin bottom-arrow($right, $top, $mt) {
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+
+    width: 8px;
+    height: 1.8px;
+    z-index: 1;
+    top: $top;
+    margin-top: $mt;
+
+    background-color: $dark-shade-50;
+    transition: ease-in-out 0.07s;
+  }
+  &:before {
+    right: $right;
+    transform: rotate(45deg);
+    background-color: transparent;
+    background-image: linear-gradient(to right, $dark-shade-50 75%, transparent 75%, transparent 100%);
+  }
+
+  &:after {
+    right: $right - 4px;
+    transform: rotate(-45deg);
+  }
+}
+
+@mixin bottom-arrow-input {
+  @include bottom-arrow(20px, 67%, 0);
 }
