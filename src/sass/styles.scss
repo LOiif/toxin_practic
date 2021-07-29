@@ -3,7 +3,14 @@
 @import "global/variables";
 @import "global/mixins";
 @import "global/global";
-@import "blocks/header";
-@import "blocks/header-nav";
+
+@import "blocks/text-input";
 @import "blocks/button";
 @import "blocks/logo";
+
+@import "blocks/header";
+@import "blocks/header-nav";
+@import "blocks/small-search";
+@import "blocks/search-form";
+@import "blocks/datepicker";
+@import "blocks/dropdown";
