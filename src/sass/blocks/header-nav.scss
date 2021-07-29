@@ -42,7 +42,6 @@
     margin-top: 1px;
 
     background-color: $dark-shade-50;
-    transition: ease-in-out 0.07s;
   }
 
   &:before {
@@ -56,22 +55,22 @@
     right: 8px;
     transform: rotate(-45deg);
   }
-
-  &:hover:after,
-  &:hover:before {
-    opacity: 0.5;
-  }
 }
 
 .header-nav__pages-link {
   transition: ease-in-out 0.07s;
 
-  &_active{
+  &_active {
     color: $dark-shade-75;
     font-weight: 700;
   }
+
   &:hover {
-    color: $dark-shade-25;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 

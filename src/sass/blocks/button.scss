@@ -1,4 +1,4 @@
-.button{
+.button {
   text-transform: uppercase;
   font-size: $title-size-s;
   font-weight: 700;
@@ -10,26 +10,42 @@
   border-radius: 22px;
   position: relative;
 
+  transition: ease-in-out 0.07s;
+
   background-clip: padding-box;
+
   &:before {
     content: '';
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: -1;
     margin: -2px;
     border-radius: inherit;
-    @include purple-gradient;
+    background-image: linear-gradient(to top, $blue, $purple);
   }
-  &:active:before{
+
+  &:not(.button_filled):active:before {
     opacity: 0.5;
   }
 }
 
-.button_filled{
-  background-color: transparent;
+.button_filled {
   color: white;
+  background-image: linear-gradient(to top, $blue, $purple);
+
+  &:active {
+    opacity: 0.5;
+  }
 }
-.button_transparent{
+
+.button_transparent {
   background-color: white;
   color: $purple;
+
+  &:active {
+    opacity: 0.5;
+  }
 }
