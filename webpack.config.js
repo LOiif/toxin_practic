@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -10,11 +11,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-                filename: 'index.html',
-                template: './src/index.html'
-            }),
+            filename: 'index.html',
+            template: './src/index.html'
+        }),
         new MiniCssExtractPlugin({
-           filename: 'style.css'
+            filename: 'style.css'
+        }),
+        new webpack.ProvidePlugin({
+            "$": "jquery",
+            "jQuery": "jquery",
+            "window.jQuery": "jquery"
         }),
     ],
     module: {
@@ -22,17 +28,29 @@ module.exports = {
             {
                 test: /\.(sc|c)ss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader",
+
                     {
-                        loader: 'resolve-url-loader',
+                        loader: "postcss-loader",
                         options: {
                             sourceMap: true,
+
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                    ],
+                                ],
+                            },
                         },
+                    },
+
+                    {
+                        loader: 'resolve-url-loader',
+                        options: {sourceMap: true,},
                     },
                     {
                         loader: "sass-loader",
-                        options: {
-                            sourceMap: true,
-                        }
+                        options: {sourceMap: true,},
                     },
                 ],
             },
@@ -63,4 +81,10 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
     },
+    resolve: {
+        alias: {
+            'jquery-ui': 'jquery-ui/ui/widgets',
+            'jquery-ui-css': 'jquery-ui/../../themes/base',
+        }
+    }
 };
