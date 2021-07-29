@@ -1,0 +1,84 @@
+.search-form {
+  width: 380px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.search-form__title {
+  color: $dark-shade;
+  font-weight: 700;
+  font-size: $title-size-l;
+
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.search-form__datepicker-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__start-stay,
+.search-form__end-stay {
+  position: relative;
+
+  font-weight: 700;
+  font-size: $title-size-s;
+  color: $dark-shade;
+  text-transform: uppercase;
+
+  @include bottom-arrow-input();
+}
+
+.search-form__datepicker {
+  display: block;
+  width: 150px;
+
+  color: $dark-shade-75;
+
+  padding-right: 30px;
+  padding-left: 17px;
+
+  margin-top: 10px;
+}
+
+.search-form__dropdown {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.search-form__submit {
+  position: relative;
+  padding: 13px 90px 14px;
+
+  cursor: pointer;
+  transition: ease-in-out 0.07s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 44px;
+    height: 44px;
+
+    mask: url("/src/img/arrow-forward.svg") no-repeat center;
+
+    background-color: white;
+  }
+
+  &:hover {
+    transform: translate(1px, -1px);
+    box-shadow: $dark-shade-50 1px 2px 2px;
+
+    &:after {
+      transform: translate(1px, -1px);
+    }
+  }
+}
