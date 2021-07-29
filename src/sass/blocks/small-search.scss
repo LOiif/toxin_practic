@@ -1,0 +1,35 @@
+.small-search {
+  background-image: url("/src/img/main-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 1700px) {
+    background-position-y: -300px;
+  }
+}
+
+.small-search__wrapper {
+  position: relative; 
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 380px;
+}
+
+.small-search__search-form {
+  padding: 40px 30px 30px;
+}
+
+.small-search__slogan {
+  content: '';
+  position: absolute;
+
+  text-align: right;
+  width: 230px;
+  bottom: 0;
+  right: 0;
+
+  margin-bottom: 20px;
+}
