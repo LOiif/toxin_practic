@@ -4,7 +4,7 @@ import 'jquery-ui-css/datepicker.css'
 import '../extensions/jquery.datepicker.extension.range.min'
 import 'jquery-ui/../i18n/datepicker-ru';
 import {Dropdown} from "../templates/dropdown";
-import {guestsCorrector}from "../services/correctors";
+import {guestsCorrector} from "../services/correctors";
 
 export class MiniFormComponent {
     constructor() {
@@ -27,7 +27,7 @@ function createDropdown() {
     const dropdown = new Dropdown(
         {
             inputId: 'guests',
-            className: 'search-form__dropdown',
+            className: 'mini-form__dropdown',
             inputName: 'guests',
             placeholderText: 'Сколько гостей',
             showClearButton: true,
@@ -35,7 +35,7 @@ function createDropdown() {
         },
         {labelName: 'Гости', adults: 'Взрослые', children: 'Дети', babies: 'Младенцы',},
     );
-    const $submit = document.querySelector('.search-form__submit');
+    const $submit = document.querySelector('.mini-form__submit');
     $submit.insertAdjacentHTML('beforebegin', dropdown.createHTML());
 
     return dropdown;
@@ -53,9 +53,17 @@ function createDatepicker() {
         closeText: "Применить",
 
         onSelect: function (dateText, inst, extensionRange) {
-            $('.search-form__datepicker_start').val(extensionRange.startDateText);
-            $('.search-form__datepicker_end').val(extensionRange.endDateText);
+            $('.mini-form__datepicker_start').val(extensionRange.startDateText);
+            $('.mini-form__datepicker_end').val(extensionRange.endDateText);
         },
+    });
+    const $uiDatepicker = $('.ui-datepicker');
+    const $start = $('.mini-form__start-stay');
+    $datepicker.on('click', () => {
+        $uiDatepicker.css({
+            left: $start.offset().left,
+            top: $uiDatepicker.offset().top + 5,
+        });
     });
 }
 
@@ -69,7 +77,6 @@ function buttonClickHandler(evt) {
     const $counters = $dropdownEl.querySelectorAll(`.dropdown__item-counter`);
     const $counterEl = $dropdownEl.querySelector(`.dropdown__item-counter[data-name=${evt.target.dataset.name}]`);
     let value = 0;
-
 
     if (evt.target.dataset.type === 'plus') {
         $counterEl.textContent = +$counterEl.textContent + 1 + '';

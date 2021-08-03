@@ -1,4 +1,4 @@
-.search-form {
+.mini-form {
   width: 380px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -6,7 +6,7 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
-.search-form__title {
+.mini-form__title {
   color: $dark-shade;
   font-weight: 700;
   font-size: $title-size-l;
@@ -15,13 +15,13 @@
   margin-bottom: 20px;
 }
 
-.search-form__datepicker-wrapper {
+.mini-form__datepicker-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.search-form__start-stay,
-.search-form__end-stay {
+.mini-form__start-stay,
+.mini-form__end-stay {
   position: relative;
 
   font-weight: 700;
@@ -32,7 +32,7 @@
   @include bottom-arrow-input();
 }
 
-.search-form__datepicker {
+.mini-form__datepicker {
   display: block;
   width: 150px;
 
@@ -44,7 +44,7 @@
   margin-top: 10px;
 }
 
-.search-form__dropdown {
+.mini-form__dropdown {
   display: flex;
   flex-direction: column;
 
@@ -52,7 +52,7 @@
   margin-bottom: 30px;
 }
 
-.search-form__submit {
+.mini-form__submit {
   position: relative;
   padding: 13px 90px 14px;
 
