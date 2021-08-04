@@ -1,0 +1,33 @@
+.footer-nav__wrapper {
+  width: 550px;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 5px;
+}
+
+.footer-nav__main-list,
+.footer-nav__support-list,
+.footer-nav__about-list {
+  margin: 0
+}
+
+.footer-nav__support-title,
+.footer-nav__main-title,
+.footer-nav__about-title {
+  font-size: $title-size-s;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $dark-shade;
+
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer-nav__support-item,
+.footer-nav__main-item,
+.footer-nav__about-item {
+  color: $dark-shade-50;
+  margin-top: 21px;
+}

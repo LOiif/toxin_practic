@@ -136,40 +136,43 @@
         <p class="footer__logo-description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные
           взгляды»</p>
       </div>
-    </div>
 
-    <nav class="footer__nav footer-nav">
-      <div class="footer-nav__wrapper">
-        <ul class="footer-nav__main-list">
-          <h3 class="footer-nav__main-title">Навигация</h3>
-          <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">О нас</a></li>
-          <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Новости</a></li>
-          <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Служба поддержки</a></li>
-          <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Услуги</a></li>
-        </ul>
+      <nav class="footer__nav footer-nav">
+        <div class="footer-nav__wrapper">
+          <ul class="footer-nav__main-list">
+            <h3 class="footer-nav__main-title">Навигация</h3>
+            <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">О нас</a></li>
+            <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Новости</a></li>
+            <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Служба поддержки</a></li>
+            <li class="footer-nav__main-item"><a href="#" class="footer-nav__main-link">Услуги</a></li>
+          </ul>
 
-        <ul class="footer-nav__about-list">
-          <h3 class="footer-nav__about-title">О нас</h3>
-          <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">О сервисе</a></li>
-          <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Наша команда</a></li>
-          <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Вакансии</a></li>
-          <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Инвесторы</a></li>
-        </ul>
+          <ul class="footer-nav__about-list">
+            <h3 class="footer-nav__about-title">О нас</h3>
+            <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">О сервисе</a></li>
+            <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Наша команда</a></li>
+            <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Вакансии</a></li>
+            <li class="footer-nav__about-item"><a href="#" class="footer-nav__about-link">Инвесторы</a></li>
+          </ul>
 
-        <ul class="footer-nav__support-list">
-          <h3 class="footer-nav__support-title">Служба поддержки</h3>
-          <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Соглашения</a></li>
-          <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Сообщества</a></li>
-          <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Связь с нами</a></li>
-        </ul>
-      </div>
+          <ul class="footer-nav__support-list">
+            <h3 class="footer-nav__support-title">Служба поддержки</h3>
+            <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Соглашения</a></li>
+            <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Сообщества</a></li>
+            <li class="footer-nav__support-item"><a href="#" class="footer-nav__support-link">Связь с нами</a></li>
+          </ul>
+        </div>
+      </nav>
 
-      <div class="footer__subscribe">
-        <label for="subscribe-email">Подписка</label>
+      <form class="footer__subscribe" >
+        <h3 class="footer__subscribe-title">Подписка</h3>
         <p class="footer__subscribe-description">Получайте специальные предложения и новости сервиса</p>
-        <input type="email" id="subscribe-email" name="subscribe-email">
-      </div>
-    </nav>
+        <label class="footer__subscribe-label">
+          <input class="footer__subscribe-input text-input" type="email" name="subscribe-email" placeholder="Email">
+          <button class="footer__subscribe-submit" type="submit"><span class="visually-hidden">Отправить</span></button>
+        </label>
+      </form>
+    </div>
   </div>
 
   <div class="footer__bottom">
@@ -179,24 +182,24 @@
         <li class="footer__social-item">
           <a href="#" class="footer__social-link">
             <span class="visually-hidden">Наш Твиттер</span>
-            <svg class="icon">
-              <use xlink:href="#twitter-logo" width="24" height="20"></use>
+            <svg class="icon" width="24" height="20">
+              <use xlink:href="#twitter-logo"></use>
             </svg>
           </a>
         </li>
         <li class="footer__social-item">
           <a href="#" class="footer__social-link">
             <span class="visually-hidden">Наш Фэйсбук</span>
-            <svg class="icon">
-              <use xlink:href="#facebook-logo" width="22" height="22"></use>
+            <svg class="icon" width="22" height="22">
+              <use xlink:href="#facebook-logo"></use>
             </svg>
           </a>
         </li>
         <li class="footer__social-item">
           <a href="#" class="footer__social-link">
             <span class="visually-hidden">Наш Инстаграм</span>
-            <svg class="icon">
-              <use xlink:href="#instagram-logo" width="22" height="22"></use>
+            <svg class="icon"  width="22" height="22">
+              <use xlink:href="#instagram-logo"></use>
             </svg>
           </a>
         </li>
