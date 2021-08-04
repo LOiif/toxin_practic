@@ -11,7 +11,11 @@
 
   padding-bottom: 10px;
 
-  @include bottom-arrow-input();
+  @include bottom-arrow-input($dark-shade-50);
+
+  &_active {
+    @include bottom-arrow-input($dark-shade-75);
+  }
 }
 
 .dropdown__input {
@@ -35,7 +39,7 @@
 .dropdown__content {
   position: absolute;
 
-  top: 69px;
+  top: 66px;
   left: 0;
   right: 0;
 

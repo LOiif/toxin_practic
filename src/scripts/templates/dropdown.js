@@ -7,23 +7,33 @@ export class Dropdown {
     hide() {
         const $contentEl = document.querySelector('.dropdown__content');
         const $inputEl = document.querySelector(`.dropdown__input[id=${this.options.inputId}]`);
+        const $labelEl = document.querySelector('.dropdown__label');
         if (!$contentEl.classList.contains('visually-hidden')) {
             $contentEl.classList.add('visually-hidden');
             $inputEl.style.borderRadius = 4 + 'px';
             $inputEl.style.borderColor = 'rgba(31, 32, 65, 0.25)';
             $inputEl.disabled = false;
+
+            if($labelEl.classList.contains('dropdown__label_active')){
+                $labelEl.classList.remove('dropdown__label_active');
+            }
         }
     }
 
     show() {
         const $contentEl = document.querySelector('.dropdown__content');
         const $inputEl = document.querySelector(`.dropdown__input[id=${this.options.inputId}]`);
+        const $labelEl = document.querySelector('.dropdown__label');
         if ($contentEl.classList.contains('visually-hidden')) {
             $contentEl.classList.remove('visually-hidden');
             $inputEl.style.borderBottomLeftRadius = 0;
             $inputEl.style.borderBottomRightRadius = 0;
             $inputEl.style.borderColor = 'rgba(31, 32, 65, 0.5)';
             $inputEl.disabled = true;
+
+            if(!$labelEl.classList.contains('dropdown__label_active')){
+                $labelEl.classList.add('dropdown__label_active');
+            }
         }
     }
 

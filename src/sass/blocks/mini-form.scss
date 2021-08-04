@@ -29,7 +29,7 @@
   color: $dark-shade;
   text-transform: uppercase;
 
-  @include bottom-arrow-input();
+  @include bottom-arrow-input($dark-shade-50);
 }
 
 .mini-form__datepicker {
