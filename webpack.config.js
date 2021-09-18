@@ -7,12 +7,16 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.bundle.js',
+        filename: '[name].bundle.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
+            template: './src/index.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'form.html',
+            template: './src/form.html',
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
@@ -60,7 +64,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'img/[name]-[hash:8].[ext]',
+                            name: '[name]-[hash:8].[ext]',
                         }
                     },
                 ],
@@ -71,10 +75,17 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'fonts/[name]-[hash:8].[ext]',
+                            name: '[name]-[hash:8].[ext]',
                         },
                     },
                 ],
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
+                options: {
+                    sources: true,
+                }
             },
         ],
     },
