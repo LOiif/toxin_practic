@@ -1,0 +1,17 @@
+.main-form {
+  min-width: 266px;
+}
+
+.main-form__dates-of-stay{
+  color: $dark-shade;
+  font-size: $title-size-s;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main-form__datepicker{
+  margin-top: 5px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 40px ;
+}
