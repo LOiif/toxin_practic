@@ -4,7 +4,6 @@ import 'jquery-ui-css/datepicker.css'
 import '../extensions/jquery.datepicker.extension.range.min'
 import 'jquery-ui/../i18n/datepicker-ru';
 import {Dropdown} from "../templates/dropdown";
-import {guestsCorrector} from "../services/correctors";
 
 export class MiniFormComponent {
     constructor() {
@@ -15,11 +14,6 @@ export class MiniFormComponent {
         createDatepicker();
 
         const dropdown = createDropdown();
-        const $dropdownEl = document.querySelector('.' + dropdown.options.className);
-
-        $dropdownEl.addEventListener('click', buttonClickHandler.bind(dropdown));
-        document.body.addEventListener('click', inputClickHandler.bind(dropdown));
-        document.body.addEventListener('focusin', inputClickHandler.bind(dropdown));
     }
 }
 
@@ -35,14 +29,17 @@ function createDropdown() {
         },
         {labelName: 'Гости', adults: 'Взрослые', children: 'Дети', babies: 'Младенцы',},
     );
-    const $submit = document.querySelector('.mini-form__submit');
-    $submit.insertAdjacentHTML('beforebegin', dropdown.createHTML());
+    const $submit = document.querySelector('.dropdown');
+
+    if ($submit.classList.contains(dropdown.options.className)) {
+        $submit.insertAdjacentHTML('afterbegin', dropdown.createHTML());
+    }
 
     return dropdown;
 }
 
 function createDatepicker() {
-    const $datepicker = $(".datepicker");
+    const $datepicker = $(".mini-form__datepicker");
     $.datepicker.setDefaults($.datepicker.regional["ru"])
     $datepicker.datepicker({
         range: 'period',
@@ -62,55 +59,7 @@ function createDatepicker() {
     $datepicker.on('click', () => {
         $uiDatepicker.css({
             left: $start.offset().left,
-            top: $uiDatepicker.offset().top + 5,
+            top: $start.offset().top + 71,
         });
     });
 }
-
-function buttonClickHandler(evt) {
-    if (evt.target.tagName !== 'BUTTON') return;
-
-    const $dropdownEl = document.querySelector('.' + this.options.className);
-    const $inputEl = $dropdownEl.querySelector('.dropdown__input');
-    const $buttonsMinus = $dropdownEl.querySelectorAll(`.dropdown__item-button[data-type="minus"]`);
-    const $buttonMinusEl = $dropdownEl.querySelector(`.dropdown__item-button[data-type="minus"][data-name=${evt.target.dataset.name}]`);
-    const $counters = $dropdownEl.querySelectorAll(`.dropdown__item-counter`);
-    const $counterEl = $dropdownEl.querySelector(`.dropdown__item-counter[data-name=${evt.target.dataset.name}]`);
-    let value = 0;
-
-    if (evt.target.dataset.type === 'plus') {
-        $counterEl.textContent = +$counterEl.textContent + 1 + '';
-        $counters.forEach(c => value += +c.textContent);
-        if ($buttonMinusEl.hasAttribute('disabled') && +$counterEl.textContent > 0) {
-            $buttonMinusEl.disabled = false;
-        }
-        $inputEl.value = guestsCorrector(value);
-
-    } else if (evt.target.dataset.type === 'minus') {
-        $counterEl.textContent = +$counterEl.textContent - 1 + '';
-        $counters.forEach(c => value += +c.textContent);
-        if (+$counterEl.textContent < 1) $buttonMinusEl.disabled = true;
-        $inputEl.value = guestsCorrector(value);
-
-    } else if (evt.target.dataset.name === 'clear') {
-        $inputEl.value = '';
-        $counters.forEach(c => c.textContent = '0');
-        $buttonsMinus.forEach(b => b.disabled = true);
-
-        evt.target.disabled
-    } else if (evt.target.dataset.name === 'close') {
-        this.hide();
-    }
-}
-
-function inputClickHandler(evt) {
-    const $dropdownEl = document.querySelector('.' + this.options.className);
-    if (evt.target.getAttribute('id') === this.options.inputId) {
-        this.show();
-    } else if (!$dropdownEl.contains(evt.target)) {
-        this.hide();
-    }
-}
-
-
-
