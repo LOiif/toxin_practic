@@ -1,8 +1,7 @@
-
 .slider {
   position: relative;
 
-  &:hover .slider__control{
+  &:hover .slider__control {
     display: inline-block;
   }
 }
@@ -13,12 +12,17 @@
 }
 
 .slider__item {
+  display: none;
   min-width: 270px;
   height: 152px;
 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  &_active {
+    display: block;
+  }
 }
 
 .slider__item:nth-child(1) {
@@ -36,7 +40,6 @@
 .slider__item:nth-child(4) {
   background-image: url("/src/img/image4.jpg");
 }
-
 
 .slider__indicators {
   position: absolute;
@@ -64,7 +67,7 @@
   }
 }
 
-.slider__control{
+.slider__control {
   display: none;
 
   content: "";
@@ -80,13 +83,12 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &[data-slide="next"]{
+  &[data-slide="next"] {
     right: 0;
   }
 
-  &[data-slide="prev"]{
+  &[data-slide="prev"] {
     left: 0;
     transform: rotate(180deg);
   }
 }
-

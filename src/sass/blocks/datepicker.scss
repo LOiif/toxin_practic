@@ -1,5 +1,10 @@
 .datepicker {
   position: relative;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 
   &::placeholder {
     font-size: $text-size-m;

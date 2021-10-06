@@ -10,11 +10,13 @@
   text-transform: uppercase;
 
   padding-bottom: 10px;
+  cursor: pointer;
 
   @include bottom-arrow-input($dark-shade-50);
 
   &_active {
     @include bottom-arrow-input($dark-shade-75);
+    cursor: default;
   }
 }
 
@@ -24,9 +26,12 @@
   padding-left: 17px;
   padding-right: 44px;
 
+  text-overflow: ellipsis;
+  cursor: pointer;
+
   &:disabled {
     background-color: white;
-    cursor: text;
+    cursor: default;
   }
 
   &:focus {

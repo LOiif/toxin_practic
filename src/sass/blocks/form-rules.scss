@@ -7,7 +7,7 @@
   margin-bottom: 30px;
 }
 
-.form-rules__title{
+.form-rules__title {
   color: $dark-shade;
   font-size: $title-size-s;
   text-transform: uppercase;
@@ -19,6 +19,8 @@
 .form-rules__item {
   display: flex;
   color: $dark-shade-50;
+
+  cursor: pointer;
 
   &:not(:last-of-type) {
     margin-bottom: 10px;
@@ -42,7 +44,7 @@
   padding-right: 18px;
 }
 
-.form-rules__item input[type="checkbox"]{
+.form-rules__item input[type="checkbox"] {
 
   &:hover + .form-rules__checkbox-indicator {
     border-color: $dark-shade-50;
@@ -58,5 +60,4 @@
   &:focus + .form-rules__checkbox-indicator {
     border-color: $dark-shade;
   }
-
 }

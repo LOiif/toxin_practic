@@ -1,11 +1,12 @@
-.form-accessibility{
+.form-accessibility {
   display: flex;
   flex-direction: column;
   border: none;
   padding: 0;
   margin-bottom: 30px;
 }
-.form-accessibility__title{
+
+.form-accessibility__title {
   color: $dark-shade;
   font-size: $title-size-s;
   text-transform: uppercase;
@@ -17,6 +18,9 @@
 .form-accessibility__item {
   display: flex;
   font-weight: 700;
+
+  cursor: pointer;
+
   &:not(:last-of-type) {
     margin-bottom: 10px;
   }
@@ -39,7 +43,7 @@
   padding-right: 18px;
 }
 
-.form-accessibility__item input[type="checkbox"]{
+.form-accessibility__item input[type="checkbox"] {
 
   &:hover + .form-accessibility__checkbox-indicator {
     border-color: $dark-shade-50;
@@ -57,12 +61,12 @@
   }
 }
 
-.form-accessibility__wrapper{
+.form-accessibility__wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.form-accessibility__description{
+.form-accessibility__description {
   font-size: $title-size-s;
   color: $dark-shade-50;
   font-weight: 400;

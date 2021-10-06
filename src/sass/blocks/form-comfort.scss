@@ -21,7 +21,9 @@
 
   margin-bottom: 18px;
 
-  @include bottom-arrow(24px, 67%, -3px, $dark-shade-50);
+  cursor: pointer;
+
+  @include bottom-arrow(18px, 67%, -3px, $dark-shade-50);
 
   &_open {
     &:after {
@@ -34,10 +36,10 @@
   }
 }
 
-.form-comfort__wrapper{
+.form-comfort__wrapper {
   display: none;
 
-  &_open{
+  &_open {
     display: block;
   }
 }
@@ -45,6 +47,8 @@
 .form-comfort__item {
   display: flex;
   color: $dark-shade-50;
+
+  cursor: pointer;
 
   &:not(:last-of-type) {
     margin-bottom: 10px;
@@ -81,8 +85,6 @@
   }
 
   &:focus + .form-comfort__checkbox-indicator {
-    outline: $dark-shade;
+    border-color: $dark-shade;
   }
-
-
 }
