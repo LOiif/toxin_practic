@@ -22,6 +22,10 @@ module.exports = {
             filename: 'register.html',
             template: './src/register.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'login.html',
+            template: './src/login.html',
+        }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
         }),
