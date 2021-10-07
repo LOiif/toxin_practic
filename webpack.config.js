@@ -18,6 +18,10 @@ module.exports = {
             filename: 'form.html',
             template: './src/form.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'register.html',
+            template: './src/register.html',
+        }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
         }),
