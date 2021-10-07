@@ -1,0 +1,276 @@
+.registration {
+  background-image: url("/src/img/background_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding: 20px 0;
+}
+
+.registration__wrapper {
+  width: 380px;
+  background-color: white;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
+  margin: 0 auto;
+  padding: 40px 30px 30px;
+}
+
+.registration__title {
+  color: $dark-shade;
+  font-size: $title-size-l;
+  font-weight: 700;
+
+  margin-top: 0;
+}
+
+.registration__name-input,
+.registration__lastname-input {
+  width: 100%;
+  padding-left: 15px;
+
+  color: $dark-shade-75;
+  font-weight: 400;
+  font-size: 14px;
+
+  margin-bottom: 10px;
+
+  &::placeholder {
+    color: $dark-shade-25;
+  }
+}
+
+.registration__gender {
+  display: flex;
+
+  border: none;
+  padding: 0;
+
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+.registration__radio-indicator {
+  position: relative;
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid $dark-shade-25;
+  border-radius: 50%;
+
+  margin-right: 10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 80px;
+
+    left: 21px;
+
+    top: -2px;
+    bottom: -2px;
+    background-color: white;
+
+    opacity: 0.5;
+  }
+}
+
+.registration__gender-item {
+  display: flex;
+  align-items: center;
+
+  color: $dark-shade;
+
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+}
+
+.registration__gender-item input[type="radio"]:checked + .registration__radio-indicator {
+  border-color: $purple;
+
+  &:before {
+    content: "";
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    margin-top: -6px;
+    margin-left: -6px;
+
+    @include purple-gradient();
+  }
+
+  &:after {
+    opacity: 0.25;
+  }
+}
+
+.registration__gender-item input[type="radio"]:focus + .registration__radio-indicator {
+  outline: solid 1px $dark-shade-75;
+}
+
+.registration__gender-item input[type="radio"]:checked {
+  color: $dark-shade-75;
+}
+
+
+.registration__birthdate {
+  color: $dark-shade;
+  font-size: $title-size-s;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.registration__birthdate-input {
+  width: 100%;
+  padding-left: 15px;
+
+  color: $dark-shade-75;
+  font-weight: 400;
+  font-size: 14px;
+
+  margin-bottom: 20px;
+  margin-top: 5px;
+
+  &::placeholder {
+    color: $dark-shade-25;
+  }
+}
+
+.registration__data {
+  color: $dark-shade;
+  font-size: $title-size-s;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.registration__password-input,
+.registration__email-input {
+  width: 100%;
+  padding-left: 15px;
+
+  color: $dark-shade-75;
+  font-weight: 400;
+  font-size: 14px;
+
+  margin-bottom: 10px;
+
+  &::placeholder {
+    color: $dark-shade-25;
+  }
+}
+
+.registration__email-input {
+  margin-top: 5px;
+}
+
+.registration__special-offers {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+.registration__special-offers input[type="checkbox"] {
+
+}
+
+.registration__special-offers input[type="checkbox"] + .registration__switch-indicator {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+
+  border: 1px solid $dark-shade-25;
+  border-radius: 10px;
+
+  margin-right: 10px;
+
+  &:before {
+    content: "";
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    left: 3px;
+    top: 50%;
+
+    background-color: $dark-shade-25;
+    border-radius: 50%;
+
+    margin-top: -6px;
+
+    transition: all ease-in-out 0.17s;
+  }
+}
+
+.registration__special-offers input[type="checkbox"]:checked + .registration__switch-indicator {
+  border-color: $purple;
+
+  &:before {
+    transform: translateX(20px);
+    background-color: $purple;
+    @include purple-gradient();
+  }
+}
+
+.registration__submit {
+  position: relative;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 15px;
+
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    -webkit-mask: url("/src/img/arrow-forward.svg") no-repeat center;
+    mask: url("/src/img/arrow-forward.svg") no-repeat center;
+    background-color: white;
+  }
+}
+
+.registration__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 44px;
+  padding-bottom: 15px;
+}
+
+.registration__login-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 18px;
+
+  margin: 0;
+}
+
+.registration__login-button {
+  z-index: 2;
+
+  padding: 13px 26px;
+}
